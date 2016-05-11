@@ -118,7 +118,7 @@ class RestAPIUserTest extends PHPUnit_Framework_TestCase
         print __METHOD__." login: $res->code \n";
         try {
           print __METHOD__." login: ".json_encode($res->body)."\n";
-        catch (Throwable t) {
+        } catch (Throwable t) {
           print __METHOD__." login: ".$res->body."\n";
         }
         $this->assertEquals($res->code,200);
