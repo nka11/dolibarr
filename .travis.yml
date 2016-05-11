@@ -241,6 +241,7 @@ script:
   if [ "$DEBUG" = true ]; then
     cat index.html
   fi
+  git diff htdocs/includes/restler/framework/Luracast/Restler/Resources.php
   set +e
   echo
 
