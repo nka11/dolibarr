@@ -319,7 +319,7 @@ after_failure:
   echo Failure
   # Remove set -e from previous steps to execute this part
   echo "Debugging informations"
-  # Apache log file
+  echo "Apache log file"
   sudo cat /var/log/apache2/error.log
   if [ "$DEBUG" = true ]; then
     # Upgrade log files
@@ -329,9 +329,10 @@ after_failure:
     # MariaDB log file
     sudo cat /var/log/mysql/error.log
     # TODO: PostgreSQL log file
-    echo
+    echo "Failure"
   else
     # Last lines of Dolibarr log file
+    echo "Dolibarr log file"
     tail -500 documents/dolibarr.log
   fi
 
