@@ -115,6 +115,12 @@ class RestAPIUserTest extends PHPUnit_Framework_TestCase
         $req->method("GET");
         $req->uri("$this->api_url/login?login=$login&password=$password");
         $res = $req->send();
+        print __METHOD__." login: $res->code \n";
+        try {
+          print __METHOD__." login: ".json_encode($res->body)."\n";
+        catch (Throwable t) {
+          print __METHOD__." login: ".$res->body."\n";
+        }
         $this->assertEquals($res->code,200);
         $this->api_key = $res->body->success->token;
         print __METHOD__." api_key: $this->api_key \n";
